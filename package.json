@@ -1,0 +1,26 @@
+{
+  "name": "uncfg",
+  "version": "0.0.0",
+  "description": "Just another configuration helper for Node.js.",
+  "keywords": [
+    "config",
+    "environment",
+    "helper",
+    "manager",
+    "simple"
+  ],
+  "homepage": "https://github.com/bryanjhv/node-uncfg",
+  "bugs": {
+    "url": "https://github.com/bryanjhv/node-uncfg/issues"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Bryan Horna",
+    "email": "bryanjhv@gmail.com",
+    "url": "https://bryanjhv.github.io"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bryanjhv/node-uncfg.git"
+  }
+}
