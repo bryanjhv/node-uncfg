@@ -19,12 +19,20 @@
     "email": "bryanjhv@gmail.com",
     "url": "https://bryanjhv.github.io"
   },
+  "files": [
+    "lib/index.js"
+  ],
+  "main": "lib/index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/bryanjhv/node-uncfg.git"
   },
   "scripts": {
     "test": "mocha"
+  },
+  "dependencies": {
+    "deep-extend": "^0.4.1",
+    "has": "1.0.0"
   },
   "devDependencies": {
     "mocha": "^3.2.0"
