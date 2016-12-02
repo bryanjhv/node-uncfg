@@ -28,6 +28,8 @@
     "url": "https://github.com/bryanjhv/node-uncfg.git"
   },
   "scripts": {
+    "prepublish": "babel lib -d lib",
+    "postpublish": "git checkout .",
     "test": "mocha"
   },
   "dependencies": {
@@ -35,6 +37,8 @@
     "has": "1.0.0"
   },
   "devDependencies": {
+    "babel-cli": "^6.0.0",
+    "babel-preset-es2015": "^6.0.0",
     "mocha": "^3.2.0"
   }
 }
