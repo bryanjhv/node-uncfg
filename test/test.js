@@ -14,7 +14,7 @@ describe('UnCfg should', () => {
 
     it('general settings', () => {
       config.load(confDir);
-      let store = config.store;
+      let store = config();
 
       assert.equal(store.port, 3000);
       assert.equal(store.hello.world, 'Hello world!');
@@ -26,7 +26,7 @@ describe('UnCfg should', () => {
       process.env.NODE_ENV = 'production';
 
       config.load(confDir);
-      let store = config.store;
+      let store = config();
 
       assert.equal(store.port, 8080);
       assert.equal(store.hello.world, 'Hello world!');
@@ -83,6 +83,39 @@ describe('UnCfg should', () => {
     it('always with a key', () => {
       config.set('nothing');
       assert.strictEqual(config.get('nothing'), null);
+    });
+
+  });
+
+  describe('have a helper to', () => {
+
+    it('get a single key', () => {
+      assert.strictEqual(config('port'), 3000);
+    });
+
+    it('set a single key', () => {
+      config('nothing', 'special');
+      assert.equal(config('nothing'), 'special');
+    });
+
+    it('get a dotted key', () => {
+      assert.equal(config('hello.world'), 'Hello world!');
+    });
+
+    it('set a dotted key', () => {
+      config('max.count', 100);
+      assert.strictEqual(config('max.count'), 100);
+    });
+
+    it('get copy of store', () => {
+      let copy = config();
+      assert.equal(typeof copy, 'object');
+
+      copy.port = 5000;
+      assert.notStrictEqual(config('port'), 5000);
+
+      copy.hello.nothing = true;
+      assert.strictEqual(config('hello.nothing'), null);
     });
 
   });
