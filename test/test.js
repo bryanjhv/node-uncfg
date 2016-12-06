@@ -14,19 +14,19 @@ describe('UnCfg should', () => {
 
     it('general settings', () => {
       config.load(confDir);
-      let store = config();
+      const store = config();
 
       assert.equal(store.port, 3000);
       assert.equal(store.hello.world, 'Hello world!');
     });
 
     it('env-specific settings', () => {
-      let {PORT, NODE_ENV} = process.env;
+      const {PORT, NODE_ENV} = process.env;
       process.env.PORT = 8080;
       process.env.NODE_ENV = 'production';
 
       config.load(confDir);
-      let store = config();
+      const store = config();
 
       assert.equal(store.port, 8080);
       assert.equal(store.hello.world, 'Hello world!');
@@ -108,7 +108,7 @@ describe('UnCfg should', () => {
     });
 
     it('get copy of store', () => {
-      let copy = config();
+      const copy = config();
       assert.equal(typeof copy, 'object');
 
       copy.port = 5000;
