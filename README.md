@@ -36,7 +36,7 @@ let port = config.get('port');
 
 // Read nested value (both are valid)
 let host = config('database.host');
-let host = config.get('databse.host');
+let host = config.get('database.host');
 
 // Read value with default (only with `.get`)
 let sample = config.get('a.b.c', 'its okay :D');
